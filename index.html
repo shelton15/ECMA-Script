@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ECMAScript</title>
+        <style>
+            #box {
+                display: flex;
+                justify-content: space-around;
+            }
+            #box > div {
+                height: 5em;
+                width: 5em;
+                background-color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Working with ECMAScript</h1>
+        <div id="box">
+        <script type="text/javascript">
+            // console.log("Hello World");
+            // var topic = "javascript";
+
+            //using let keyword
+            // if(topic) {
+            //     let topic = "ECMAScript";
+            //     console.log("block", topic);
+            // }
+
+            // console.log("global", topic);
+
+            // var div;
+            // var box = document.getElementById("box");
+
+            // for (let i=0; i<5; i++) {
+            //     dvi = document.createElement("div");
+            //error on the onclick 
+            //     div.onClick = function () {
+            //         alert("this is box #" + i);
+            //     }
+            //     box.appendChild(div);
+            // }
+
+            //working with the const 
+            // const pizza = true;
+            // pizza = false;
+            // console.log(pizza)
+
+            //template strings
+            // function print(fristName) {
+            //     console.log(`Hello ${fristName}`);
+            // }
+
+            // print("SHELTON");
+
+            // function creatEmail(firstName, price) {
+            //     let shipping = 5.95;
+            //     console.log(`Hi ${firstName}! Thanks
+            //     Total: $${shipping}
+            //     Shipping: $${shipping}
+            //     Grand Total: $${price + shipping}
+            //     `);
+            // }
+
+            // creatEmail("Shelton", 100);
+
+            //searching strings
+            // const planet = "Earth";
+            // console.log(planet.startsWith("Ear"));//case sensitive
+            // console.log(planet.endsWith("Ear"));
+            // console.log(planet.includes("Ear"));
+            // console.log(planet.search("art"));
+
+            //using symbols
+            // const id = Symbol();
+
+            // const courseInfo = {
+            //     title: "Javascript",
+            //     topics: ["strings", "arrays", "objects"]
+            // };
+
+            // courseInfo[id] = 41284;
+            // console.log(courseInfo);
+
+            //writing maps
+            // let course = new Map();
+
+            // course.set("react", {description: "ui"});
+            // course.set("jest", {description: "testing"});
+
+            // console.log(course);
+            // console.log(course.react);
+            // console.log(course.get("react"));
+
+            // let details = new Map([
+            //     [new Date(), "today"],
+            //     [2, {javascript: ["js", "node", "react"]}],
+            //     ["items", [1,2]]
+            // ]);
+
+            // console.log(details.size);
+
+            // details.forEach(function (item) {
+            //     console.log(item);
+            // })
+
+            //sets
+            // let books = new Set();
+            // books.add("things fall apart");
+            // books.add("our husband has gone mad").add("Oliver Twist")
+
+            // books.delete("Oliver Twist")
+            // books.forEach(function (item) {
+            //     console.log(item);
+            // })
+
+            // console.log(books)
+            // console.log(books.size)
+            // console.log("has Oliver Twist", books.has("Oliver Twist"))
+
+            // array spread operator
+            // ...
+            // let cats = ["Biscuits", "jungle"]
+            // let dogs = ["stella", "camper"]
+
+            // let animals = ["shark", "fish", "lion", cats, dogs]
+            // let animalsSpread = ["shark", "fish", "lion", ...cats, ...dogs]
+
+            // console.log(animals)
+            // console.log(animalsSpread)
+
+            //destructuring arrays used to assign a variable to the position to an item in an array
+            //let cities = ["buea", "limbe", "kumba", "tiko", "muea"]
+
+            // //let [first, second] = ["buea", "limbe", "kumba", "tiko", "muea"]
+
+            // console.log(cities)
+            // // console.log(first)
+            // // console.log(second)
+
+            // //search arrays with .includes function
+            // console.log(cities.includes("limbe"))
+            // console.log(cities.includes("douala"))
+
+            //enhancing objects literals
+            // function skier(name, sound) {
+            //     return{
+            //          name,
+            //          sound,
+            //         powderYell: function() {
+            //             let yell = this.sound.toUpperCase();
+            //             console.log(`${yell}! ${yell}!`);
+            //         }
+            //     };
+            // }
+
+            // skier("Shelton", "woo").powderYell()
+
+            //create objects with spread operator
+            // const daytime = {
+            //     breakfast: "oatmeal",
+            //     lunch: "peanut butter and jelly"
+            // }
+
+            // const nighttime = "mac and cheese"
+
+            // const backpackingMEasl = {
+            //    ...daytime,
+            //     ...nighttime
+            // }
+
+            // console.log(backpackingMEasl)
+
+            //destructuring objects
+
+            // const vacation = {
+            //     destination: "Chile",
+            //     travelers: 2,
+            //     activity: "skiing",
+            //     cost: "so much"
+            // };
+
+            // function marketing({destination, activity}){
+            //     return `Come to ${destination} and do some ${activity}`
+            // }
+
+            // console.log(marketing(vacation))
+
+            // const {title, price} = {
+            //     title: "Reuben",
+            //     price: 7,
+            //     description: "A classic",
+            //     ingredients: [
+            //         "bread",
+            //         "corned beef",
+            //         "dressing",
+            //         "sauerkraut",
+            //         "cheese"
+            //     ]
+            // }
+
+            // console.log(title)
+            // console.log(price)
+
+            //for/of loop
+            // for (let letter of "Javascript") {
+            //     console.log(letter)
+            // }
+
+            // let topics = new Map();
+
+            // topics.set("HTML", "/topic/html")
+            // topics.set("CSS", "/topic/css")
+            // topics.set("Javascript", "/topic/javascript")
+
+            // for (let topic of topics.keys()) {
+            //     console.log(topic)
+            // }
+
+            //introducing classes
+            // class Vehicle {
+            //     constructor(description, wheels) {
+            //         this.description = description;
+            //         this.wheels = wheels
+            //     }
+            //     describeYourself() {
+            //         console.log(`I am a ${this.description} with ${this.wheels} wheels`)
+            //     }
+            // }
+
+            // // let coolSkiVan = new Vehicle("cool ski van", 4)
+
+            // // console.log(coolSkiVan)
+            // // coolSkiVan.describeYourself()
+
+            // //inheritance with JavaScript
+            // class SemiTruck extends Vehicle {
+            //     constructor() {
+            //         super("semi truck", 18)
+            //     }
+            // }
+
+            // let groceryStoreSemi = new SemiTruck()
+
+            // groceryStoreSemi.describeYourself()
+
+            //getting and setting class values
+            // let attendance = {
+            //     _list: [],
+            //     set addName(name) {
+            //         this._list.push(name)
+            //     },
+            //     get list() {
+            //         return this._list.join(", ")
+            //     }
+            // }
+
+            // attendance.addName = "Sheton Itor"
+            // console.log(attendance.list)
+
+            // attendance.addName = "Iyassa"
+            // attendance.addName = "Hagbe"
+            // attendance.addName = "Lionel"
+
+            // console.log(attendance.list)
+
+            // class Hike {
+            //     constructor(distance, pace) {
+            //         this.distance = distance
+            //         this.pace = pace
+            //     }
+            //     get lengthInHours() {
+            //         return `${this.calclength()} hours`
+            //     }
+            //     calclength() {
+            //         return this.distance / this.pace
+            //     }
+            // }
+
+
+            // const mtTallac = new Hike(10, 2)
+
+            // console.log(mtTallac.lengthInHours)
+
+            //using the string.repeat function
+            // let yell = "woo!"
+
+            // let party = yell.repeat(40)
+
+            // console.log(party)
+
+            // let cat = {
+            //     meow(times) {
+            //         console.log("meow".repeat(times))
+            //     },
+            //     purr(times) {
+            //         console.log("prr".repeat(times))
+            //     },
+            //     snore(times) {
+            //         console.log("zzzz".repeat(times))
+            //     }
+            // }
+
+            // cat.meow(4)
+            // cat.purr(6)
+            // cat.snore(10)
+
+            //setting default function parameters
+            // function add(x,y) {
+            //     console.log(x + y)
+            // }
+
+            // add(4,5)
+
+            // function haveFun(activityName="playing", time=3) {
+            //     console.log(`Today I will go ${activityName} for ${time} hours.`)
+            // }
+
+            // haveFun("playing", 1.5)
+            // haveFun()
+
+            //writing arrow functions
+            // =>
+            // let studentList = function(students) {
+            //     console.log(students)
+            // }
+
+            // let arrowstudentList = (students) => 
+            //     console.log(students)
+            
+
+
+            // studentList(["a", "b", "c"])
+            // arrowstudentList(["a", "b", "c"])
+
+            // let list = ["apple", "banana", "cherry"]
+            // list.map((item) => 
+            //     console.log(item)
+            // )
+
+            //understanding this in arrow function
+            // let person = {
+            //     first: "Shelton",
+            //     hobbies: ["gaming", "football", "drawing"],
+            //     printHobbies: function() {
+            //         this.hobbies.forEach((hobby) => {
+            //             let string = `${this.first} likes to ${hobby}`
+            //             console.log(string)
+            //         })
+            //     }
+            // }
+
+            // person.printHobbies()
+
+            //working with generators
+            // function* director() {
+            //     yield "three"
+            //     yield "two"
+            //     yield "one"
+            //     yield "action"
+            // }
+
+            // let countdown = director()
+
+            // console.log(countdown.next().value)
+            // console.log(countdown.next().value)
+            // console.log(countdown.next().value)
+            // console.log(countdown.next().value)
+            // console.log(countdown.next())
+
+            //asynchronous javascript
+            //building promises
+            // const delay = (seconds) => 
+            //     new Promise((resolve, reject) => {
+            //         if(typeof seconds !== "number"){
+            //             reject(
+            //                 new Error("seconds must be a number"))
+            //         }
+            //         setTimeout(resolve, seconds * 1000)
+            //     }
+            // )
+
+            // console.log("Zero seconds")
+            // delay(1).then(() => console.log("one second"))
+            // delay(5).then(() => console.log("five seconds"))
+            // delay("six").then(() => console.log("six second"))
+
+            //loading remote data with promises
+            // const spacePeople = () => {
+            //     return new Promise((resolve, rejects) => {
+            //         const api = "http://api.open-notify.org/astros.json"
+            //         const request = new XMLHttpRequest()
+            //         request.open("GET", api)
+            //         request.onload = () => {
+            //             if(request.status === 200) {
+            //                 resolve(JSON.parse(request.response))
+            //             } else {
+            //                 rejects(Error(request.statusText))
+            //             }
+            //         }
+            //         request.onerror = err => rejects(err)
+            //         request.send()
+            //     })
+            // }
+
+            // spacePeople().then((spaceData) =>
+            // console.log(spaceData),
+            // (err) => 
+            // console.error(new Error("can't load poeple"))
+            // )
+
+            //returning promises using fetch 
+            // let getSpacePeople = () => 
+            // fetch("http://api.open-notify.org/astros.json")
+            // .then((res) => res.json())
+            // .then(console.log)
+
+            // let spaceNames = () =>
+            //      getSpacePeople()
+            //      .then((json) => json.people)
+            //      .then((people) => people.map((p) => p.name))
+            //      .then((names) => names.join(", "));
+
+            // spaceNames().then(console.log)
+
+            //using async and await syntax
+            // const delay = (seconds)  =>
+            //     new Promise((resolves) =>
+            //     setTimeout(resolves, seconds * 1000)
+            //     )
+
+            // const countToFive = async() => {
+            //     console.log("zero seconds")
+            //     await delay(1)
+            //     console.log("one second")
+            //     await delay(2)
+            //     console.log("two seconds")
+            // }
+
+            // countToFive()
+
+            //async/await with fetch 
+            const githubRequest = async (login) => {
+                let response = await fetch(
+                    `http://api.github.com/shelton15/${login}`
+                )
+
+                let json = await response.json()
+                let summary = `${json.name}, ${json.company}`
+                console.log(summary)
+                
+            }
+
+            githubRequest("shelton15")
+        </script>
+        </div>
+    </body>
+</html>
